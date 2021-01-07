@@ -9,30 +9,30 @@
 <br><br><br>
 
 <ion-content>
-  <form>
+  <form  [formGroup]="registerForm">
     <ion-item lines="full">
       <ion-label position="floating">First name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text"  formControlName="frestName" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Last name</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text"  formControlName="lastNam"></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text"    formControlName="email" required></ion-input>
     </ion-item>
 
     <ion-item lines="full">
       <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password"  formControlName="password" required ></ion-input>
     </ion-item>
     <br>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Sign Up</ion-button>
+        <ion-button (click)="save()" color="danger" expand="block">Sign Up</ion-button>
       </ion-col>
     </ion-row>
   </form>
