@@ -7,6 +7,24 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'app',
+    children:[
+
+     
+
+    {
+      path: 'auth',
+      loadChildren: () => import('./component/auth/auth.module').then(m => m.AuthModule),
+
+  },
+
+
+   
+
+
+    ]
+},
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

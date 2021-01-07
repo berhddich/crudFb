@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(public NavController: NavController) {}
+
+
+  register() {
+    this.NavController.navigateRoot('/app/auth/register')
+  }
+  login() {
+    this.NavController.navigateRoot('/app/auth/login')
+  }
 
 }
