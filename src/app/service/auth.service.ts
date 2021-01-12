@@ -2,13 +2,15 @@ import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth'
 import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth,
+  constructor(private afAuth: AngularFireAuth,  public NavController: NavController ,
     private router: Router,) {
 
       {
@@ -50,7 +52,8 @@ export class AuthService {
     return  this.afAuth.signOut().then(res =>{
       localStorage.clear();
       localStorage.getItem('user')
-      this.router.navigate(['app/auth/login']);
+      this.NavController.navigateRoot('')
+
 
     }
 

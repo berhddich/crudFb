@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/service/auth.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,11 @@ import { AuthService } from 'src/app/service/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor( private fb: FormBuilder,public toastController: ToastController,  private _authService: AuthService) { }
+  constructor( 
+    private fb: FormBuilder,
+    public toastController: ToastController,  
+    private _authService: AuthService,
+    public NavController: NavController) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -37,6 +42,8 @@ export class LoginComponent implements OnInit {
         this.presentToast('Login completed');
         localStorage.setItem('user', JSON.stringify(auth['user']))
         // this.router.navigate(['app/dashboard']);
+        this.NavController.navigateRoot('app/tabs-layout')
+
 
       }
 
@@ -44,7 +51,6 @@ export class LoginComponent implements OnInit {
 
     })
       .catch(error => {
-
         this.presentToast(error);
 
       })

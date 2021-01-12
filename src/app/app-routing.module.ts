@@ -2,10 +2,17 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+ 
   {
-    path: 'home',
+    path: '',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
+  
+  {
+    path: 'auth',
+    loadChildren: () => import('./component/auth/auth.module').then(m => m.AuthModule),
+
+},
   {
     path: 'app',
     children:[
@@ -13,8 +20,8 @@ const routes: Routes = [
      
 
     {
-      path: 'auth',
-      loadChildren: () => import('./component/auth/auth.module').then(m => m.AuthModule),
+      path: 'tabs-layout',
+      loadChildren: () => import('./component/layout-home/tabs-layout/tabs-layout.module').then(m => m.TabsLayoutModule),
 
   },
 
@@ -25,9 +32,9 @@ const routes: Routes = [
     ]
 },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: '**',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+   
   },
 ];
 

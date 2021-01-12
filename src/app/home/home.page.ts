@@ -12,10 +12,10 @@ export class HomePage {
 
 
   register() {
-    this.NavController.navigateRoot('/app/auth/register')
+    this.NavController.navigateRoot('auth/register')
   }
   login() {
-    this.NavController.navigateRoot('/app/auth/login')
+    this.NavController.navigateRoot('auth/login')
   }
 
 }
