@@ -1,3 +1,42 @@
-<p>
-  cars works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>list of cars</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        code3
+      </ion-col>
+      <ion-col>
+        fullName
+      </ion-col>
+      <ion-col>
+        mobile      </ion-col>
+      <ion-col>
+       Action
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let car of carsList"> 
+      <ion-col>
+        {{car.cars.code3}}
+      </ion-col>
+      <ion-col>
+        {{car.cars.fullName}}
+      </ion-col>
+      <ion-col>
+        {{car.cars.mobile}}    </ion-col>
+      <ion-col>
+       Action
+      </ion-col>
+    </ion-row>
+   
+  </ion-grid>
+</ion-content>

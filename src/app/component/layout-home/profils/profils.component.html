@@ -1,3 +1,41 @@
-<p>
-  profils works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>list of profils</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+ 
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        firstName      </ion-col>
+      <ion-col>
+        lastName
+      </ion-col>
+      <ion-col>
+        age      </ion-col>
+      <ion-col>
+       Action
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let car of profilsList"> 
+      <ion-col>
+        {{car.profil.firstName}}
+      </ion-col>
+      <ion-col>
+        {{car.profil.lastName}}
+      </ion-col>
+      <ion-col>
+        {{car.profil.age}}    </ion-col>
+      <ion-col>
+       Action
+      </ion-col>
+    </ion-row>
+   
+  </ion-grid>
+</ion-content>
