@@ -6,12 +6,20 @@ const routes: Routes = [
  
   {
     path: '',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    redirectTo:'app/tabs-layout'   ,
+    pathMatch: 'full'
+
+
   },
   
   {
     path: 'auth',
     loadChildren: () => import('./component/auth/auth.module').then(m => m.AuthModule),
+
+},
+{
+  path: 'home',
+  loadChildren: () => import('./home/home.module').then(m => m.HomePageModule),
 
 },
   {
@@ -35,8 +43,7 @@ const routes: Routes = [
 },
   {
     path: '**',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-   
+redirectTo:'app/tabs-layout'   
   },
 ];
 

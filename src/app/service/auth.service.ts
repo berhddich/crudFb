@@ -51,7 +51,7 @@ export class AuthService {
 
     return  this.afAuth.signOut().then(res =>{
       localStorage.clear();
-      this.NavController.navigateRoot('')
+      this.NavController.navigateRoot('home')
 
 
     }
