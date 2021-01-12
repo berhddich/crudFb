@@ -9,7 +9,10 @@
 
 
 <ion-content>
- 
+ <br>
+ <br>
+ <br>
+ <br>
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -25,15 +28,18 @@
     </ion-row>
     <ion-row *ngFor="let car of profilsList"> 
       <ion-col>
-        {{car.profil.firstName}}
+        {{car?.profil.firstName}}
       </ion-col>
       <ion-col>
-        {{car.profil.lastName}}
+        {{car?.profil.lastName}}
       </ion-col>
       <ion-col>
-        {{car.profil.age}}    </ion-col>
+        {{car?.profil.age}}    </ion-col>
       <ion-col>
-       Action
+        <ion-button expand="block" color="danger" >
+          <ion-icon name="trash-outline"></ion-icon>
+        
+        </ion-button>
       </ion-col>
     </ion-row>
    
